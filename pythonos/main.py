@@ -36,7 +36,9 @@ if __name__ == "__main__":
     ident()
     hashi.imprimir()
     ident()
-    
+    hashi.deletaraluno(1)
+    hashi.imprimir()
+    # hashi.getlista()[0]
     # print("busca:")
     # hashi.busca(1)
     # hashi.busca(22)

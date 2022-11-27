@@ -1,3 +1,6 @@
+def ident():
+    print("=#" * 30)
+
 class Aluno:
     def __init__(self, RA = 00,nome = "jão",idade = "18"):
         self.RA = RA
@@ -22,11 +25,23 @@ class Aluno:
     def getRA(self):
         return self.RA 
     
-    def adicionaraluno():
-        while True:
-            RA
-            nome
-            idade
+    # def substituirAluno(self):
+    #     ident()
+    #     Ra = input("entre com novo dado de RA:")
+    #     if Ra != "" :
+    #         self.setRA(Ra)
+    #     else:
+    #         print("nenhum valor foi entrado")
+    #     ident()
+    #     Nome = str(input("entre com o novo nome:"))
+    #     self.setNome(Nome)
+    #     idade = int(input("entre com novo valor da idade:"))
+    #     self.setIdade(idade)
+        
+    
+        
+        
+
     
     def MostraDados(self):
         dados = "[RA:" + str(self.RA) + ", nome:" + self.nome + " , idade:" + str(self.idade) + "]"

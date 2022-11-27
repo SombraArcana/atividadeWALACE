@@ -74,11 +74,21 @@ class HashTable:
         return self.totalitens 
     
     # métodos da classe
-    
-    def functionHash(self ,aluno):
-        #entrada self está requirindo o objeto da classe obrigatóriamente, e aluno a entrada
-        #objeto.fuctionhash(aluno)
-        return aluno.getRA() % self.tamanhomax
+    def deletaraluno(self,RA):
+        a = (RA % self.tamanhomax)
+        busca = False
+        aluno = 0
+        for x in self.getlista()[a-1]:
+            if x.getRA() == RA:
+                busca = True
+                aluno = x
+            else:
+                busca = False
+        if busca:
+            self.getlista()[a-1].remove(aluno)        
+        else:
+            print("não existe o ",RA,"na hashtable")
+
     
     # def hash(tam_vetor,max):
     #     quant_itens = 0
