@@ -54,7 +54,11 @@ def main():
                 hashi.busca(search)
             elif op == "3":
                 ident()
-                search = int(input("Digite a RA do estudante a se Deletar:"))
+                bu = int(input("Digite a RA do estudante a se Deletar:"))
+                hashi.deletaraluno(bu)
+        
+        else:
+            main()
 
 
 if __name__ == "__main__":
@@ -82,59 +86,4 @@ if __name__ == "__main__":
     main()
     
     
-    # while True:
-    #     ident()
-    #     print("MAIN")
-    #     ident()
-    #     print("Digite [1] para inserir aluno \nDigite [2] para usar funções da HasTable \nDigite <ENTER> para sair do while")
-    #     opcao = input("escolha sua opção")
-    #     if opcao == "":
-    #         ident()
-    #         print("==SESSÃO FINALIZADA==")
-    #         break
-    #     elif opcao == "1":
-    #         ident()
-    #         pass
-    #     elif opcao == "2":
-    #         ident()
-    #         print("Digite [1] para exibir HasTable \nDigite [2] buscar Aluno com RA \nDigite [3] para remover Aluno com RA \nDigite <ENTER> para retornar ao menu")
-    #         op =  input("escolha sua opção")
-    #         if op = "":
-
-
     
-    
-    
-    
-    
-    # ident()
-    # # print(a5)
-    # print(hashi.getlista())
-    # ident()
-    # print("printando objeto 1")
-    # print(hashi.getlista()[0])
-    # ident()
-    # hashi.imprimir()
-    # ident()
-    # hashi.deletaraluno(12)
-    # hashi.imprimir()
-    
-    # hashi.getlista()[0]
-    # print("busca:")
-    # hashi.busca(1)
-    # hashi.busca(22)
-    # print(hashi.getlista()[0][0])
-    # print(hashi.getlista()[0][1])
-    # print(hashi.getlista()[0][2])
-    
-    # print(hashi.getlista()[1])
-    # print(hashi.getlista()[2])
-    
-    # hashi.imprimir()
-    
-    # hashi[1].append(a1)
-    # hashi[1].append(a2)
-    # hashi[3].append(a4)
-    # hashi[5].append(a3)
-    # print(a1)
-    # print(hashi)
