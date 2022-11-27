@@ -23,37 +23,42 @@ class HashTable:
     def hashtable(self, obj):
         a = (obj.getRA() % self.tamanhomax)
         
-        if self.getlista()[a-1] == []:
-            print("a chave estava vazia, o aluno:",obj.getNome(),"vai ser adicionado a :", self.nome,"[",a-1,"]")
-            self.getlista()[a-1].append(obj)
+        if self.getlista()[a] == []:
+            print("a chave estava vazia, o aluno:",obj.getNome(),"vai ser adicionado a :", self.nome,"[",a,"]")
+            self.getlista()[a].append(obj)
         else:
             print("o aluno:", obj.getNome()," está sendo comparado dentro da chave")
             
-            for t in range(len(self.getlista()[a-1])):
+            for t in range(len(self.getlista()[a])):
                 
-                if self.getlista()[a-1][t].getRA() != obj.getRA() and (t+1) == len(self.getlista()[a-1]):
+                if self.getlista()[a][t].getRA() != obj.getRA() and (t+1) == len(self.getlista()[a]):
                     
-                    print(obj.getNome(),"vai ser adicionada a posição self.getlista()[",a-1,"][",t+1,"] por não ter colisão")
+                    print(obj.getNome(),"vai ser adicionada a posição self.getlista()[",a,"][",t+1,"] por não ter colisão")
                     
-                    self.getlista()[a-1].append(obj)
+                    self.getlista()[a].append(obj)
 
-                elif self.getlista()[a-1][t].getRA() == obj.getRA():
-                    print("não pode adicionar", obj.getNome(), "por ter o mesmo RA que:", self.getlista()[a-1][t].getNome())
+                elif self.getlista()[a][t].getRA() == obj.getRA():
+                    print("não pode adicionar", obj.getNome(), "por ter o mesmo RA que:", self.getlista()[a][t].getNome())
                     break
                 else:
                     print(obj.getNome(),"foi passado para próxima etapa")
     
     def busca(self,RA):
         a = (RA % self.tamanhomax)
-        print("busca começada em :",self.nome(),"[",a-1,"]")
-        if self.getlista()[a-1] == []:
-            print("lista vazia")
+        busca = False
+        aluno = 0
+        for x in self.getlista()[a]:
+            if x.getRA() == RA:
+                busca = True
+                aluno = x
+            else:
+                busca = False
+        if busca:
+            coordenada = self.getlista()[a].index(aluno)
+            print("o aluno está alocado na posição")
+            print(self.nome,"[",a,"][",coordenada,"]" )
         else:
-            
-            for x in range(len(self.getlista()[a-1])):
-                
-                # self.getlista()[a-1][x].getRA()
-                print(x)
+            print("não existe o ",RA,"na hashtable")
     
     def settamanhomax(self, tamanhomax):
         self.tamanhomax = tamanhomax
@@ -78,14 +83,14 @@ class HashTable:
         a = (RA % self.tamanhomax)
         busca = False
         aluno = 0
-        for x in self.getlista()[a-1]:
+        for x in self.getlista()[a]:
             if x.getRA() == RA:
                 busca = True
                 aluno = x
             else:
                 busca = False
         if busca:
-            self.getlista()[a-1].remove(aluno)        
+            self.getlista()[a].remove(aluno)        
         else:
             print("não existe o ",RA,"na hashtable")
 
@@ -113,7 +118,7 @@ class HashTable:
     def imprimir(self):
         print("tabelaHash:")
         for x in range(0,self.tamanhomax):
-            print(f"index({x})")
+            print("index[",x,"]")
             if self.getlista()[x] == []:
                 print("[]")
                 pass
