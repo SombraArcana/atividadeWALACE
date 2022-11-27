@@ -36,7 +36,6 @@ class HashTable:
                     print(obj.getNome(),"vai ser adicionada a posição self.getlista()[",a,"][",t+1,"] por não ter colisão")
                     
                     self.getlista()[a].append(obj)
-
                 elif self.getlista()[a][t].getRA() == obj.getRA():
                     print("não pode adicionar", obj.getNome(), "por ter o mesmo RA que:", self.getlista()[a][t].getNome())
                     break
@@ -47,15 +46,20 @@ class HashTable:
         a = (RA % self.tamanhomax)
         busca = False
         aluno = 0
-        for x in self.getlista()[a]:
-            if x.getRA() == RA:
-                busca = True
-                aluno = x
-            else:
+        x = 0
+        while x < len(self.getlista()[a]) and busca == False:
+            print(self.getlista()[a][x].getRA()," == ",RA)
+            if self.getlista()[a][x].getRA() != RA:
                 busca = False
+            else:
+                busca = True
+                aluno = self.getlista()[a][x]
+            x += 1
+            
+        print(busca)
         if busca:
             coordenada = self.getlista()[a].index(aluno)
-            print("o aluno está alocado na posição")
+            print("o ",RA," está alocado na posição")
             print(self.nome,"[",a,"][",coordenada,"]" )
         else:
             print("não existe o ",RA,"na hashtable")
@@ -90,30 +94,11 @@ class HashTable:
             else:
                 busca = False
         if busca:
-            self.getlista()[a].remove(aluno)        
+            self.getlista()[a].remove(aluno) 
+            print("o RA foi",RA," deletado com sucesso!")       
         else:
             print("não existe o ",RA,"na hashtable")
 
-    
-    # def hash(tam_vetor,max):
-    #     quant_itens = 0
-    #     maxdeitens = max
-    #     tamanhomax = tam_vetor
-    #     estrutura = Aluno[tam_vetor]
-        
-    # def Dhash(aluno):
-    #     for x in aluno:
-    #         aluno.pop()
-        
-    # def getSize(self):
-    #     return self.totalitens
-        
-    # def imprimir(self):
-    #     estrutura = Aluno[self.maxdeitens]
-    #     print("tabelaHash:\n")
-    #     for x in range(0,x<self.tamanhomax):
-    #         if estrutura[x].getRA() != -1:
-    #             print(x , " :", estrutura[x].getRA())
 
     def imprimir(self):
         print("tabelaHash:")
@@ -124,4 +109,4 @@ class HashTable:
                 pass
             else:
                 for n in range(len(self.getlista()[x])):
-                    print(self.getlista()[x][n-1].MostraDados())
+                    print(self.getlista()[x][n].MostraDados())
