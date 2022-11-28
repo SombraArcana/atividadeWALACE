@@ -1,4 +1,5 @@
 from aluno import Aluno
+from insertionsort import InsertionSort
 
 class HashTable:
 
@@ -36,6 +37,7 @@ class HashTable:
                     print(obj.getNome(),"vai ser adicionada a posição self.getlista()[",a,"][",t+1,"] por não ter colisão")
                     
                     self.getlista()[a].append(obj)
+                    InsertionSort.ordenarHash(self.getlista()[a])
                 elif self.getlista()[a][t].getRA() == obj.getRA():
                     print("não pode adicionar", obj.getNome(), "por ter o mesmo RA que:", self.getlista()[a][t].getNome())
                     break

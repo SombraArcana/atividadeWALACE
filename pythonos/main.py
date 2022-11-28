@@ -14,7 +14,7 @@ def main():
         ident()
         print("MAIN")
         ident()
-        print("Digite [1] para inserir aluno \nDigite [2] para usar funções da HasTable \nDigite [3] para criar uma lista \nDigite <ENTER> para sair do while")
+        print("Digite [1] para inserir aluno \nDigite [2] para usar funções da HasTable \nDigite [3] para criar uma lista e usar o algoritmo de InsertionSort \nDigite <ENTER> para sair do while")
         opcao = input("escolha sua opção:")
         if opcao == "":
             ident()
@@ -62,12 +62,25 @@ def main():
                 hashi.deletaraluno(bu)
         
         elif opcao == "3":
-            pass
+            page = []
+            while True:
+                num = input("adicione número para lista:")
+                if num == "":
+                    break
+                else:
+                    page.append(int(num))
+            
+            print("sua lista antes do algoritmo:")
+            print(page)
+            print("sua lista depois do algoritmo:")
+            InsertionSort.ordenarVetor(page)
+            print(page)
         else:
             main()
 
 
 if __name__ == "__main__":
+    
     a1 = Aluno(65,"anderson Nunes", 56)
     a2 = Aluno(78,"anclison clines", 56)
     a3 = Aluno(63,"adermilto fagundes", 56)
@@ -77,9 +90,6 @@ if __name__ == "__main__":
     a7 = Aluno(13,"juana", 56)
     a8 = Aluno(17,"invanilson rodrigues", 90)
     
-    print(hashi.getlista())
-    ident()
-    
     hashi.hashtable(a1)
     hashi.hashtable(a2)
     hashi.hashtable(a3)
@@ -88,9 +98,7 @@ if __name__ == "__main__":
     hashi.hashtable(a6)
     hashi.hashtable(a7)
     hashi.hashtable(a8)
-    print(pagica)
-    InsertionSort.ordenarVetor(pagica)
-    print(pagica)
+    main()
     # main()
     
     
