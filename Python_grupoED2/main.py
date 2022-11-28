@@ -99,6 +99,10 @@ if __name__ == "__main__":
     hashi.hashtable(a7)
     hashi.hashtable(a8)
     main()
+    # ident()
+    # print(pagica)
+    # InsertionSort.ordenarVetor(pagica)
+    # print(pagica)
     # main()
     
     

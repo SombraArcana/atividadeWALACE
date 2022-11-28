@@ -4,7 +4,7 @@ from insertionsort import InsertionSort
 class HashTable:
 
     #método construtor
-    def __init__(self, lista = [],nome = "hashi",tamanhomax = 11,maxdeitens = 3, totalitens = 0):
+    def __init__(self, lista = [],nome = "hash",tamanhomax = 11,maxdeitens = 3, totalitens = 0):
         self.lista = lista
         self.nome = nome
         self.tamanhomax = tamanhomax
@@ -21,7 +21,7 @@ class HashTable:
         self.getlista()[index].append(val)
         pass
     
-    def hashtable(self, obj):
+    def hashtable(self,obj):
         a = (obj.getRA() % self.tamanhomax)
         
         if self.getlista()[a] == []:
