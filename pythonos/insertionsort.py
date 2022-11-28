@@ -13,9 +13,9 @@ class InsertionSort:
                 vetor[indiceJ + 1] = vetor[indiceJ]
                 indiceJ = indiceJ - 1
             
-            vetor[indiceJ + 1] = aux;
+            vetor[indiceJ + 1] = aux
 
     def toString():
-        return "InsertionSort";
+        return "InsertionSort"
 
 

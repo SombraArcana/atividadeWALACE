@@ -1,16 +1,20 @@
 from aluno import Aluno
 from hashtable import HashTable
 from insertionsort import InsertionSort
+
 hashi  = HashTable([[],[],[],[],[],[],[],[],[],[],[]],"hash1")
+
+pagica = [7,5,9,3,2,1]
 def ident():
     print("=#" * 30)
-    
+
+
 def main():
     while True:
         ident()
         print("MAIN")
         ident()
-        print("Digite [1] para inserir aluno \nDigite [2] para usar funções da HasTable \nDigite <ENTER> para sair do while")
+        print("Digite [1] para inserir aluno \nDigite [2] para usar funções da HasTable \nDigite [3] para criar uma lista \nDigite <ENTER> para sair do while")
         opcao = input("escolha sua opção:")
         if opcao == "":
             ident()
@@ -57,6 +61,8 @@ def main():
                 bu = int(input("Digite a RA do estudante a se Deletar:"))
                 hashi.deletaraluno(bu)
         
+        elif opcao == "3":
+            pass
         else:
             main()
 
@@ -82,8 +88,10 @@ if __name__ == "__main__":
     hashi.hashtable(a6)
     hashi.hashtable(a7)
     hashi.hashtable(a8)
-    
-    main()
+    print(pagica)
+    InsertionSort.ordenarVetor(pagica)
+    print(pagica)
+    # main()
     
     
     
